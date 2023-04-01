@@ -27,3 +27,5 @@ const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
+
+gallerySection.style.listStyle = 'none'; // думаю, що краще крапки в стилях забрати глобально, але попрактикувався тут
