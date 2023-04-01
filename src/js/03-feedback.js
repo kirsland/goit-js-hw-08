@@ -24,7 +24,7 @@ function handleFormFieldsChange(e) {
   formFields = { email: '', message: '' };
   formFields.email = form.email.value;
   formFields.message = form.message.value;
-  console.log(formFields);
+  // console.log(formFields);
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(formFields));
 }
 
