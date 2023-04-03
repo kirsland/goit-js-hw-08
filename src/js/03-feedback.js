@@ -28,12 +28,20 @@ function handleFormFieldsChange(e) {
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(formFields));
 }
 
-// Очищаємо значення полів в локальному сховищі при сабміті форми:
+// Очищаємо значення полів в локальному сховищі при сабміті форми.
+// Виводимо помилку, якщо поля порожні.
+// Виводимо обєкт заповнених полів в консоль.
 
 form.addEventListener('submit', handleFormSubmit);
 
 function handleFormSubmit(e) {
-  e.preventDefault();
-  localStorage.removeItem(LOCALSTORAGE_KEY);
-  form.reset();
+  if (form.email.value === '' || form.message.value === '') {
+    return alert(`Please, fill in all fields.`);
+  } else {
+    // console.log(`email: ${form.email.value}, message: ${form.email.value}`);
+    console.log(formFields);
+    e.preventDefault();
+    localStorage.removeItem(LOCALSTORAGE_KEY);
+    form.reset();
+  }
 }
